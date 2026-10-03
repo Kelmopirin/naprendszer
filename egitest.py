@@ -1,7 +1,7 @@
 ﻿import pygame
 import math
 
-G = 0.001
+G = 0.01
 
 
 class Egitest:
@@ -25,11 +25,12 @@ class Egitest:
             return
         d = math.sqrt(d2)
         a = G * other.m / d2
-        self.a[0] = dx / d * a
-        self.a[1] = dy / d * a
+        self.a[0] += dx / d * a
+        self.a[1] += dy / d * a
 
     def update(self):
         self.v[0] += self.a[0]
         self.v[1] += self.a[1]
         self.pos[0] += self.v[0]
         self.pos[1] += self.v[1]
+        self.a=[0,0]
