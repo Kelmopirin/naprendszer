@@ -1,5 +1,5 @@
 import pygame
-from naprendszer.egitest import Egitest
+from egitest import Egitest
 width,height=800,600
 screen = pygame.display.set_mode((width,height))
 running = True
@@ -14,7 +14,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    #screen.fill((0, 0, 0))
+    screen.fill((0, 0, 0))
     nap.draw(screen)
     fold.draw(screen)
     pygame.display.flip()
